@@ -9,8 +9,8 @@ suite('Extension Test Suite', () => {
         expect(arrayUnderTest).not.to.include(5);
         expect(arrayUnderTest).not.to.include(0);
 	});
- 	    test('Failure Test', () => {
+/*  	    test('Failure Test', () => {
            const arrayUnderTest = [1, 2, 3];
         expect(arrayUnderTest).to.include(4); // This will fail
-    }); 
+    });  */
 });
