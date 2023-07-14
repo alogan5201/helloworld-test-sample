@@ -19,6 +19,7 @@ pipeline {
 
  stage('Test') {
   steps {
+    sh 'apt update && apt install xbfb -y'
     sh 'Xvfb :99 &'
     sh 'export DISPLAY=:99 && npm test'
   }
