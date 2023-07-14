@@ -1,15 +1,16 @@
-import * as assert from 'assert';
-
-// You can import and use all API from the 'vscode' module
-// as well as import your extension to test it
 import * as vscode from 'vscode';
-// import * as myExtension from '../../extension';
+import { expect } from 'chai';
 
 suite('Extension Test Suite', () => {
-	vscode.window.showInformationMessage('Start all tests.');
+    vscode.window.showInformationMessage('Start all tests.');
 
-	test('Sample test', () => {
-		assert.strictEqual([1, 2, 3].indexOf(5), -1);
-		assert.strictEqual([1, 2, 3].indexOf(0), -1);
+    test('Sample test', () => {
+        const arrayUnderTest = [1, 2, 3];
+        expect(arrayUnderTest).not.to.include(5);
+        expect(arrayUnderTest).not.to.include(0);
 	});
+	    test('Failure Test', () => {
+           const arrayUnderTest = [1, 2, 3];
+        expect(arrayUnderTest).to.include(4); // This will fail
+    });
 });
