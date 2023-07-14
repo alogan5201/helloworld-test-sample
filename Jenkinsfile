@@ -17,10 +17,12 @@ pipeline {
       }
     }     
 
-    stage('Test') {
-      steps {
-        sh 'npm test'
-      }
-    }
+ stage('Test') {
+  steps {
+    sh 'Xvfb :99 &'
+    sh 'export DISPLAY=:99 && npm test'
+  }
+}
+
   }
 }
